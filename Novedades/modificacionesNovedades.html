@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+
+<title>Modificar Novedades</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<h1>Modificar novedad</h1>
+<h3>Codo a Codo 2023</h3>
+<div id="app">
+<form @submit.prevent="obtenerNovedad">
+<label for="codigo">Código:</label>
+<input type="text" v-model="codigo" required><br>
+<button type="submit">Modificar Novedad</button>
+<a href="indexNovedades.html">Menu principal</a>
+</form>
+<div v-if="mostrarDatosNovedad">
+<h2>Datos del Novedad</h2>
+<form @submit.prevent="guardarCambios">
+<label for="descripcionModificar">Descripción:</label>
+<input type="text" id="descripcion" v-model="descripcion" required><br>
+<label for="diario">Diario:</label>
+<input type="text" id="diario" v-model="diario" required><br>
+
+<button type="submit">Guardar Cambios</button>
+<a href="modificacionesNovedades.html">Cancelar</a>
+</form>
+</div>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="modificaciones.js"></script>
+</body>
+</html>
